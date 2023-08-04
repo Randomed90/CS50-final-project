@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Portfolio
+{% endblock %}
+
+{% block main %}
+
+    <div id="logos">
+        <p id="name-card" class="logo-card">I'm Muhammad Al Fatih. A self taught programmer from Malaysia specializing in web development and low-level stuff</p>
+        <a id="about-me-card" class="logo-card" href="#section1">About me</a>
+        <!-- <a id="during-card" class="logo-card" href="#during">During CS50x</a> -->
+    </div>
+
+    <section id="section1">
+        <div id="about-creator" class="event">
+            <h1 style="margin-bottom: 3vh; margin-top: 2vh;">About me</h1>
+            <p>Hey there, I'm Muhammad Al Fatih, a homeschooler from Malaysia, currently gearing up for the national exams. My passion lies in web development, where I enjoy creating user-friendly and visually appealing websites. But you know what? Low-level programming also intrigues me! I love understanding how things work at the core level. I'm always eager to learn and grow, connecting with fellow developers online to share ideas and collaborate on exciting projects. My goal is to make a positive impact through technology, and I can't wait to see where this journey takes me!</p>
+        </div>
+        <!-- <div id="during" class="event">
+            <h1 style="margin-bottom: 3vh; margin-top: 2vh;">During CS50x</h1>
+            <p>During the CS50x course, I explored various aspects of computer science, web development, and software engineering. As the course neared its conclusion, I was determined to create a meaningful project that would showcase my skills and make a positive impact. Drawing on my personal interest in health and wellness, the idea of Giga Fitness emerged—a user-friendly website that enables individuals to track their fitness progress and stay motivated in their journey to a healthier lifestyle.</p>
+        </div> -->
+    </section>
+
+    <button type="button" id="up-btn">
+        <a href="#top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 22 22">
+                <image xlink:href="https://www.svgrepo.com/show/391564/up-circle-o.svg" width="22" height="22" />
+            </svg>
+        </a>
+    </button>
+
+    <script>
+        // slide elements into view
+        const events = document.querySelectorAll(".event");
+
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function fadeInElements() {
+            events.forEach((event) => {
+                if (isElementInViewport(event)) {
+                    event.classList.add("visible");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", fadeInElements);
+    </script>
+{% endblock %}

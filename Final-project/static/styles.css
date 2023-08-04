@@ -1,0 +1,255 @@
+/* Reusable Variables */
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --info-color: #0dcaf0;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --gray-color: #6c757d;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--gray-color);
+  font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: var(--gray-color);
+  box-shadow: 0 0 10px black;
+}
+
+.nav-link {
+  margin: 0 .4rem 0 0.4rem;
+  box-shadow: 2px 2px 2px 1px black;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-link:hover {
+  transform: translate(-4px, -2px) scale(1.02,1.02);
+  color: #c9c9c9;
+  transition: 0s;
+}
+
+.nav-link:focus {
+  color: #c9c9c9 !important;
+}
+
+.btn-mine {
+  font-family: 'Google Sans', sans-serif;
+  padding: 4px 0;
+  outline: none;
+  border: none;
+  width: 35%;
+  border-radius: 5px;
+  color: black;
+  background-color: white;
+}
+
+.btn-mine:hover {
+  color: white;
+  background-color: black;
+}
+
+.active {
+  background-color: var(--gray-color) !important;
+  border: var(--gray-color) !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+}
+
+/* Main Logo Styles */
+#main-logo {
+  width: 140px;
+  margin-right: 0.5em;
+}
+
+@media screen and (max-width: 992px) {
+  /* navbar */
+  .navbar {
+    height: 10vh;
+  }
+  /* Adjust font-size for smaller screens */
+  #name-card {
+    font-size: 1.4rem !important;
+  }
+  #during-card, #about-me-card {
+    font-size: 1.3em !important;
+  }
+}
+
+#name-card {
+  background-color: transparent;
+  font-size: 230%;
+  white-space: normal;
+  margin: 35vh 10% 3vh 10%;
+  cursor: default;
+  animation: slideInTop 1s;
+  transition: all 0.35s;
+  border-radius: 10px;
+}
+
+#during-card, #about-me-card {
+  margin: 3vh auto 0 auto;
+  animation-name: slideInRight;
+  animation-duration: 1.5s;
+  font-size: 2em;
+  border: 2px solid white;
+  cursor: default;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.35s;
+}
+
+#during-card {
+  animation-duration: 1.7s;
+}
+
+#about-me-card:hover, #during-card:hover {
+  transform: translateY(-10px);
+  color: black;
+  background-color: white;
+}
+
+#name-card:hover {
+  transform: translateY(-10px) scale(105%);
+}
+
+#logos {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+  background-color: black;
+}
+
+/* Logo Card Styles */
+.logo-card {
+  color: white;
+  background-color: rgba(0, 0, 0, .5);
+  text-align: center;
+  min-width: min-content;
+  padding: 8px;
+  white-space: nowrap;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#section1 {
+  animation: slideInRight 1s;
+  position: relative;
+  background-image: linear-gradient(black, var(--gray-color) 10%);
+  height: 90vh;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em;
+  text-align: center;
+  font-size: 1.3em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* about creator and during CS50x */
+#about-creator, #during {
+  top: 28vh;
+  box-shadow: 10px 15px 60px black;
+  padding-left: 1.1em;
+  padding-right: 1.1em;
+  border-radius: 15px;
+  border: 2px solid var(--gray-color);
+  position: relative;
+  max-width: 70ch;
+}
+
+.event {
+  padding: 5px;
+  opacity: 0;
+}
+
+.event.visible {
+  animation: fadeInUp 1s forwards;
+  opacity: 1;
+}
+
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateX(300px);
+    }
+    to {
+        opacity: 1 !important;
+        transform: translateX(0);
+    }
+}
+
+.list-group {
+  box-shadow: 10px 15px 30px black;
+  width: 50vw;
+  margin: 20vh auto 0 auto;
+  font-size: 1.5em;
+  border-radius: 10px;
+}
+
+.list-group-item {
+  text-decoration: none;
+  text-align: center;
+  background-color: lightgrey;
+  color: black;
+  opacity: .9;
+}
+
+#malaysia-link {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#up-btn {
+  background-color: transparent;
+  border: none;
+  position: fixed;
+  top: 87vh;
+  right: 6vh;
+  z-index: 1031;
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    transform: translateX(400px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
